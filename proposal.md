@@ -17,7 +17,7 @@ The challenges I expect to encounter is writing the logic so the code knows that
 
 ## Phases of Completion
 
-(The steps or phases you expect to go through, and the tasks that you'll need to accomplish to reach each step. These should resemble the acceptance criteria we were working through earlier.)
+I will have to complete the board game render through HTML and CSS, and then I am going to figure out how to get the game to pick a random color, and have the user repeat the color that was randomly chosen. I am going to have to write out each step in which both the computer will operate in order for the color to be chosen, as well as the steps it will take the the user to pick the color that was chosen, and have the game remember the pattern, and know if the user picked the right color.
 
 ## Links and Resources
 
