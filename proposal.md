@@ -21,4 +21,5 @@ The challenges I expect to encounter is writing the logic so the code knows that
 
 ## Links and Resources
 
-(Anything you've looked up so far or are thinking about using.)
+https://sep.yimg.com/ay/yhst-128906980716711/simon-says-a-classic-game-3.jpg
+
