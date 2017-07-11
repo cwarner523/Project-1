@@ -9,7 +9,7 @@ the button with the same color. The game will continue, and the user will have t
 
 ## Wireframe
 
-<img src= "./images/Screen Shot 2017-07-11 at 3.12.49 PM">
+<img src= "./images/Screen Shot 2017-07-11 at 3.12.49 PM.png">
 
 ## Initial thoughts on game structure
 
