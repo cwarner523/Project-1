@@ -5,7 +5,7 @@
 ## What is Simon Says?
 
 Simon Says is a memory game, with 4 colors (red, yellow, green, and blue). One of the colors will light up, and the user must click
-the button with the same color. 
+the button with the same color. The game will continue, and the user will have to continuously click the right buttons with the same color combination that has been created. The game will end once the user does not create the correct combination.
 
 ## Wireframe
 
@@ -13,7 +13,7 @@ the button with the same color.
 
 ## Initial thoughts on game structure
 
-(Write out what challenges you expect to encounter, or ideas you want to come up with)
+The challenges I expect to encounter is writing the logic so the code knows that the user clicked the correct color, and randomizing the color that will show up.
 
 ## Phases of Completion
 
