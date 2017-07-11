@@ -9,7 +9,7 @@ the button with the same color. The game will continue, and the user will have t
 
 ## Wireframe
 
-(Your wireframes go here. Preferably two or more)
+<img src= "./images/Screen Shot 2017-07-11 at 3.12.49 PM.png">
 
 ## Initial thoughts on game structure
 
@@ -21,4 +21,5 @@ The challenges I expect to encounter is writing the logic so the code knows that
 
 ## Links and Resources
 
-(Anything you've looked up so far or are thinking about using.)
+https://sep.yimg.com/ay/yhst-128906980716711/simon-says-a-classic-game-3.jpg
+
