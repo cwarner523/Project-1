@@ -4,9 +4,9 @@ body{
 
 .container{
     margin:0 auto;
-    height:585px;
-    width:585px;
-    margin-top:25px;
+    height:605px;
+    width:605px;
+    margin-top:15px;
     z-index: -1;
     position:relative;
 }
@@ -14,45 +14,49 @@ body{
 
 #circle1 {
     border-radius: 600px 0px 0px 0px;
-    background:rgba(227,228,24,0.7);
+    background:rgb(227,228,24);
     padding: 20px; 
     width: 230px;
     height: 230px; 
     display:inline-block;
     margin-right:20px;
     margin-bottom:20px;
-    border:5px solid #e3e418;
+    border:10px solid #e3e418;
     z-index: -1;
+    opacity:0.7;
 }
 
 #circle2 {
      border-radius: 0px 600px 0px 0px;
-    background:rgba(255, 0, 0, 0.7);
+    background:rgb(255, 0, 0);
     padding: 20px; 
     width: 230px;
     height: 230px; 
     display:inline-block;
     margin-bottom:20px;
-    border:5px solid #FF0000;
+    border:10px solid #FF0000;
+    opacity:0.7;
 }
 #circle3 {
     border-radius: 0px 0px 0px 600px;
-    background:rgba(92,164,245, 0.7);
+    background:rgb(92,164,245);
     padding: 20px; 
     width: 230px;
     height: 230px;
     display:inline-block;
     margin-right:20px;
-    border: 5px solid #5CA4F5;
+    border: 10px solid #5CA4F5;
+    opacity:0.7;
 }
 #circle4 {
     border-radius: 0px 0px 600px 0px;
-    background: rgba(115,173,33,0.7);
+    background: rgb(115,173,33);
     padding: 20px; 
     width: 230px;
     height: 230px; 
     display:inline-block;
-    border:5px solid #73AD21
+    border:10px solid rgba(115,173,33,1);
+    opacity:0.7;
 }
 
 .middlecircle
@@ -63,7 +67,7 @@ body{
     border:20px solid #242324;
     margin:0 auto;
     border-radius:50%;
-    margin-top:-410px;
+    margin-top:-420px;
     z-index: 1;
     position:relative;
 }
@@ -104,5 +108,11 @@ body{
     margin-top:10px;
     margin-left:63px;
 }
+
+.makeClass
+{
+    opacity:1;
+}
+
 
 
