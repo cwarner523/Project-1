@@ -24,11 +24,17 @@ function startGame()
 
 function randomizer()
 {
-   gameTurn.push(getRandom());
+   gameTurn.push(getRandom());          //build array from pattern
    userTurn = [];
    console.log(gameTurn);
-   flasher(1);
-   userBoard()
+   flasher(1);                  
+   activateUser(userTurn);          //Players turn to build matching pattern
+}
+
+function flash(times)
+{
+    console.log(this);
+    this.style.opacity = '1';
 }
 
 function flasher(times)
@@ -39,12 +45,30 @@ function flasher(times)
     }
 }
 
+
+
+function activateUser(userTurn)
+{
+    $(gameTurn[0]).click(function()         //click first div   
+    {
+        var userSelection = (this);
+        userTurn.push(userSelection);       //adding users selection to their pattern
+        flasher(1);                         //flash when user clicks
+        console.log(userSelection);         
+    }
+    
+    );
+}
+/*
 function userBoard()
 {
-
+    var userSelection = (this.id);
+    userTurn.push(userSelection);
+    flasher(1);
 }
+*/
 
-
+// create pattern
 function getRandom()
 {
     return arrOfDivs[Math.floor(Math.random() * 4)];
