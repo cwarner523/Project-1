@@ -1,15 +1,12 @@
-// declaring variables for boxes
-var $circle1 = $('#circle1')
-var $circle2 = $('#circle2')
-var $circle3 = $('#circle3')
-var $circle4 = $('#circle4')
+
 //array of divs
-var arrOfDivs = [$circle1, $circle2, $circle3, $circle4];
+const buttons = ["#circle1", "#circle2", "#circle3", "#circle4"];
 
 // decarling empty arrays to store user and game patterns
 var gameTurn = [];
 var userTurn = [];
 var $startButton = $('#startgame');
+var $circle = $('.circle')
 
 
 //start function
@@ -24,21 +21,17 @@ function startGame()
 
 function randomizer()
 {
-   gameTurn.push(getRandom());          //build array from pattern
-   userTurn = [];
-   console.log(gameTurn);
-   flasher(1);                  
-   activateUser(userTurn);          //Players turn to build matching pattern
-}
-
-function flash(times)
-{
-    console.log(this);
-    this.style.opacity = '1';
+    console.log('randomizer')
+   gameTurn.push(buttons[getRandom()]);          //build array from pattern
+   let randNum = gameTurn[0];
+   console.log(randNum);
+   flasher(1);                
+    activateUser();          //Players turn to build matching pattern
 }
 
 function flasher(times)
 {
+    console.log('flasher')
     if (times > 0)
     {
         $(gameTurn[0]).fadeTo(350, 1.0, function() {$(this).fadeTo(250, 0.7); });
@@ -46,32 +39,39 @@ function flasher(times)
 }
 
 
-
-function activateUser(userTurn)
+function activateUser()
 {
-    $(gameTurn[0]).click(function()         //click first div   
+    console.log('activate user')
+    $circle.click(function()
     {
-        var userSelection = (this);
-        userTurn.push(userSelection);       //adding users selection to their pattern
-        flasher(1);                         //flash when user clicks
-        console.log(userSelection);         
-    }
+        let userSelection = $(this).attr('id');
+        userTurn.push(userSelection);
+        console.log(userSelection)
+        flasher(1);   
+    })
+    //console.log($(this));
+    //userTurn.push(userSelection);       //adding users selection to their pattern
+    //flasher(1);                         //flash when user clicks
+    //console.log(userTurn[0])
+    checkForWin();
+}
+
+function checkForWin()
+{  
     
-    );
+    if (randNum)
+    {
+        console.log("count 1")
+        randomizer();
+    }else{
+        console.log("You have lost, try again!")
+    }
 }
-/*
-function userBoard()
-{
-    var userSelection = (this.id);
-    userTurn.push(userSelection);
-    flasher(1);
-}
-*/
 
 // create pattern
 function getRandom()
 {
-    return arrOfDivs[Math.floor(Math.random() * 4)];
+    return Math.floor(Math.random() * 4);
 }
 
 startGame();
