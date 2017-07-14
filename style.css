@@ -26,7 +26,7 @@ body{
     margin-bottom:20px;
     border:10px solid #e3e418;
     z-index: 1;
-    opacity:0.7;
+    opacity:0.5;
 }
 
 #circle2 {
@@ -38,7 +38,7 @@ body{
     display:inline-block;
     margin-bottom:20px;
     border:10px solid #FF0000;
-    opacity:0.7;
+    opacity:0.5;
     z-index: 1;
 
 }
@@ -51,7 +51,7 @@ body{
     display:inline-block;
     margin-right:20px;
     border: 10px solid #5CA4F5;
-    opacity:0.7;
+    opacity:0.5;
     z-index: 1;
 }
 #circle4 {
@@ -62,14 +62,14 @@ body{
     height: 280px; 
     display:inline-block;
     border:10px solid rgba(115,173,33,1);
-    opacity:0.7;
+    opacity:0.5;
     z-index: 1;
 }
 
 .middlecircle
 {
-    height:200px;
-    width:200px;
+    height:220px;
+    width:220px;
     background:#BEBFBF;
     border:20px solid #242324;
     margin:0 auto;
@@ -81,7 +81,7 @@ body{
 
 #title{
     background:#242324;
-    width:170px;
+    width:180px;
     height:80px;
     border-radius: 300px 300px 0px 0px;
     margin:0 auto;
@@ -100,14 +100,23 @@ body{
 #littlecircle
 {
     background:#e3e418;
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     border-radius:50%;
     display:inline-block;
-    margin:15px 8px 2px 20px;
+    margin:15px 5px 2px 20px;
 }
 
 #startgame{
+    background:#e3e418;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    display:inline-block;
+    margin:15px 5px 2px 20px;
+}
+
+#counter{
     background:red;
     border: 1px solid red;
     padding:8px;
@@ -119,6 +128,13 @@ body{
 .makeClass
 {
     opacity:1;
+}
+
+#counter
+{
+    width:200px;
+    height:200px;
+    background:white;
 }
 
 
