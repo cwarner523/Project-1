@@ -47,7 +47,13 @@ function flasher(times)
 {
     for(i = 0; i < gameTurn.length; i++)
     {
-        $(`#${gameTurn[i]}`).fadeTo(450, 1.0, function() {$(this).fadeTo(350, 0.7); });
+        //$(`#${gameTurn[i]}`).fadeTo(450, 0.5, function() {$(this).fadeTo(350, 1.0); });
+        $(`#${gameTurn[i]}`).animate({
+            opacity: '0.5',
+        });
+        $(`#${gameTurn[i]}`).animate({
+            opacity: '1',
+        });
     }
 }
 

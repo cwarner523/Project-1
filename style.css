@@ -25,8 +25,24 @@ body{
     margin-right:20px;
     margin-bottom:20px;
     border:10px solid #e3e418;
-    z-index: 1;
-    opacity:0.5;
+    box-shadow: inset 0 0 20px #4A360B;
+    z-index: 2;
+    opacity:0.99;
+}
+
+#circle1a {
+    border-radius: 600px 0px 0px 0px;
+    background:white;
+    padding: 20px; 
+    width: 280px;
+    height: 280px; 
+    display:inline-block;
+    margin-right:20px;
+    margin-bottom:20px;
+    border:10px solid white;
+    z-index: -10;
+    margin-top:-300px;
+    margin-left:-303.5px;
 }
 
 #circle2 {
@@ -38,10 +54,29 @@ body{
     display:inline-block;
     margin-bottom:20px;
     border:10px solid #FF0000;
-    opacity:0.5;
-    z-index: 1;
+    box-shadow: inset 0 0 20px #300000;
+    opacity:0.99;
+    z-index: 2;
 
 }
+
+#circle2a {
+    border-radius: 0px 600px 0px 0px;
+    background:white;
+    padding: 20px; 
+    width: 280px;
+    height: 280px; 
+    display:inline-block;
+    margin-right:20px;
+    margin-bottom:20px;
+    border:10px solid white;
+    z-index: -10;
+    margin-left:304px;
+    margin-top:-400px;
+    position:relative;
+    top:-63px;
+}
+
 #circle3 {
     border-radius: 0px 0px 0px 600px;
     background:rgb(92,164,245);
@@ -50,10 +85,31 @@ body{
     height: 280px;
     display:inline-block;
     margin-right:20px;
+    margin-top:-55px;
     border: 10px solid #5CA4F5;
-    opacity:0.5;
+    box-shadow: inset 0 0 20px #122030;
+    opacity:0.99;
     z-index: 1;
 }
+
+#circle3a {
+    border-radius: 0px 0px 0px 600px;
+    background:white;
+    padding: 20px; 
+    width: 280px;
+    height: 280px; 
+    display:inline-block;
+    margin-right:20px;
+    margin-bottom:20px;
+    border:10px solid white;
+    z-index: -10;
+    margin-left:304px;
+    margin-top:-400px;
+    position:relative;
+    top:-43px;
+    left:-303.5px;
+}
+
 #circle4 {
     border-radius: 0px 0px 600px 0px;
     background: rgb(115,173,33);
@@ -62,8 +118,30 @@ body{
     height: 280px; 
     display:inline-block;
     border:10px solid rgba(115,173,33,1);
-    opacity:0.5;
+    box-shadow: inset 0 0 20px #182407;
+    opacity:0.99;
     z-index: 1;
+    position:relative;
+    top:-344px;
+    left:305px;
+}
+
+#circle3a {
+    border-radius: 0px 0px 600px 0px;
+    background:white;
+    padding: 20px; 
+    width: 280px;
+    height: 280px; 
+    display:inline-block;
+    margin-right:20px;
+    margin-bottom:20px;
+    border:10px solid white;
+    z-index: -10;
+    margin-left:304px;
+    margin-top:-400px;
+    position:relative;
+    left:1px;
+    top:-44px;
 }
 
 .middlecircle
@@ -77,64 +155,81 @@ body{
     margin-top:-420px;
     z-index: 2;
     position:relative;
+    box-shadow: inset 0 0 30px #000000;
 }
 
 #title{
-    background:#242324;
+    background:#2E2D2E;
     width:180px;
     height:80px;
-    border-radius: 300px 300px 0px 0px;
+    border-radius: 500px 500px 0px 0px;
     margin:0 auto;
     margin-top:10px;
+    box-shadow: inset 0 0 30px #000000;
 }
 
 #title h2{
     font-family:helvetica;
     font-size:42px;
     margin-top:10px;
-    margin-left:15px;
     color:white;
     line-height: 2.8em;
+    text-align:center;
 }
 
-#littlecircle
+.littlecircle
 {
     background:#e3e418;
-    width:40px;
-    height:40px;
+     border:4px solid black;
+    width:45px;
+    height:45px;
     border-radius:50%;
     display:inline-block;
-    margin:15px 5px 2px 20px;
+    margin:10px -3px 2px 20px;
+}
+
+#easy{
+    background:#e3e418;
+    box-shadow: inset 0 0 20px #4A360B;
 }
 
 #startgame{
-    background:#e3e418;
-    width:40px;
-    height:40px;
+    background:red;
+    border:4px solid black;
+    width:45px;
+    height:45px;
     border-radius:50%;
     display:inline-block;
-    margin:15px 5px 2px 20px;
+    margin:15px -3px 2px 20px;
+    box-shadow: inset 0 0 20px #300000;
+}
+
+#hard{
+    background:#5CA4F5;
+    box-shadow: inset 0 0 20px #122030;
 }
 
 #counter{
-    background:red;
+    background:#400000;
     border: 1px solid red;
     padding:8px;
-    color:white;
-    margin-top:10px;
-    margin-left:63px;
+    color:red;
+    margin-top:8px;
+    margin-left:65px;
+    width:70px;
+    height:15px;
+    box-shadow: inset 0 0 12px #000000;
+}
+
+h3{
+    text-align:center;
+    font-family: 'Orbitron', sans-serif;
+
 }
 
 .makeClass
 {
     opacity:1;
-}
-
-#counter
-{
-    width:200px;
-    height:200px;
-    background:white;
 }
 
 
