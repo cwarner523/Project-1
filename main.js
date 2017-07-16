@@ -8,15 +8,18 @@ var userTurn = [];
 var $startButton = $('#startgame');
 var $circle = $('.circle')
 let currentCheckIndex = 0;
+$('#counter').text(0);
+
+
 // initialize button click events
 $circle.click(function()
 {
     let userSelection = $(this).attr('id');
     userTurn.push(userSelection);
     console.log(userSelection)
-    flasher();  
-
+    $(this).animate({opacity: 0.5},500).animate({opacity: 1}, 300);
     checkForWin(); 
+
 });
 
 //declaring count variable
@@ -28,6 +31,7 @@ function startGame()
     $startButton.click(function()
     {
         console.log("your game is starting");
+        $('#counter').text(0);
         randomizer();
     })
 }
@@ -39,37 +43,44 @@ function randomizer()
    gameTurn.push($buttons[getRandom()]);          //build array from pattern
    let randNum = gameTurn;
    console.log(randNum);
-   flasher(1);                
-// activateUser();          //Players turn to build matching pattern
+/*
+   if(gameTurn.length > 1)
+    {
+        setTimeout(function()
+        {
+        let a = randNum.pop();
+            gameTurn.push(a);
+        }, 1000);
+    }
+*/
+
+    setTimeout(function()
+    {
+        flasher(1);
+    }, 500);
+
 }
 
-function flasher(times)
+function flasher()
 {
     for(i = 0; i < gameTurn.length; i++)
     {
-        //$(`#${gameTurn[i]}`).fadeTo(450, 0.5, function() {$(this).fadeTo(350, 1.0); });
-        $(`#${gameTurn[i]}`).animate({
-            opacity: '0.5',
-        });
-        $(`#${gameTurn[i]}`).animate({
-            opacity: '1',
-        });
+            //$(`#${gameTurn[i]}`).fadeTo(450, 0.5, function() {$(this).fadeTo(350, 1.0); });
+            $(`#${gameTurn[i]}`).delay(i * 400).animate({
+                opacity: '0.5',
+            });
+            $(`#${gameTurn[i]}`).delay(i * 200).animate({
+                opacity: '1',
+            });
+            if(gameTurn[i] === 'circle1'){
+            $($('#circle1a')).animate({
+                opacity: '0',
+                
+            });
+            }
     }
 }
 
-function activateUser()
-{
-    let userSelection = $(this).attr('id');
-    userTurn.push(userSelection);
-    console.log(userSelection)
-    flasher();  
-    checkForWin(); 
-    //console.log($(this));
-    //userTurn.push(userSelection);       //adding users selection to their pattern
-    //flasher(1);                         //flash when user clicks
-    //console.log(userTurn[0])
-    // `#${gameTurn[0]}`
-}
 
 function checkForWin()
 { 
@@ -85,21 +96,27 @@ function checkForWin()
     }   
     
 
-
     console.log(currentCheckIndex);
     console.log(gameTurn.length);
     console.log(gameTurn.length-1);
-    $('#counter').text(count++);
-    if(currentCheckIndex ===  gameTurn.length-1){
-        console.log('resetting check index');
-        $('#counter').text(count++);
-        randomizer();
-        currentCheckIndex = 0;
-        userTurn = [];
-    }
-    else{
-        currentCheckIndex++;
-    }
+    setTimeout(function() 
+    { 
+        if(currentCheckIndex ===  gameTurn.length-1){
+            console.log('resetting check index');
+            $('#counter').text(userTurn.length);
+            
+            setTimeout(function()
+            {
+                randomizer();
+            }, 500);
+
+            currentCheckIndex = 0;
+            userTurn = [];
+
+        }else{
+            currentCheckIndex++;   
+        }
+    }, 1500);
 
 }
 
@@ -110,4 +127,3 @@ function getRandom()
 }
 
 startGame();
-//randomizer();

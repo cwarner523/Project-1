@@ -25,24 +25,9 @@ body{
     margin-right:20px;
     margin-bottom:20px;
     border:10px solid #e3e418;
-    box-shadow: inset 0 0 20px #4A360B;
+    box-shadow: inset 0 0 50px #4A360B;
     z-index: 2;
     opacity:0.99;
-}
-
-#circle1a {
-    border-radius: 600px 0px 0px 0px;
-    background:white;
-    padding: 20px; 
-    width: 280px;
-    height: 280px; 
-    display:inline-block;
-    margin-right:20px;
-    margin-bottom:20px;
-    border:10px solid white;
-    z-index: -10;
-    margin-top:-300px;
-    margin-left:-303.5px;
 }
 
 #circle2 {
@@ -54,7 +39,7 @@ body{
     display:inline-block;
     margin-bottom:20px;
     border:10px solid #FF0000;
-    box-shadow: inset 0 0 20px #300000;
+    box-shadow: inset 0 0 50px #300000;
     opacity:0.99;
     z-index: 2;
 
@@ -87,7 +72,7 @@ body{
     margin-right:20px;
     margin-top:-55px;
     border: 10px solid #5CA4F5;
-    box-shadow: inset 0 0 20px #122030;
+    box-shadow: inset 0 0 50px #122030;
     opacity:0.99;
     z-index: 1;
 }
@@ -118,7 +103,7 @@ body{
     height: 280px; 
     display:inline-block;
     border:10px solid rgba(115,173,33,1);
-    box-shadow: inset 0 0 20px #182407;
+    box-shadow: inset 0 0 50px #182407;
     opacity:0.99;
     z-index: 1;
     position:relative;
@@ -155,7 +140,7 @@ body{
     margin-top:-420px;
     z-index: 2;
     position:relative;
-    box-shadow: inset 0 0 30px #000000;
+    box-shadow: inset 0 0 60px #000000;
 }
 
 #title{
@@ -185,7 +170,7 @@ body{
     height:45px;
     border-radius:50%;
     display:inline-block;
-    margin:10px -3px 2px 20px;
+    margin:15px -3px 2px 20px;
 }
 
 #easy{
@@ -214,23 +199,29 @@ body{
     border: 1px solid red;
     padding:8px;
     color:red;
-    margin-top:8px;
+    margin-top:13px;
     margin-left:65px;
     width:70px;
     height:15px;
     box-shadow: inset 0 0 12px #000000;
+    text-align:center;
+    font-family: 'Orbitron', sans-serif;
 }
 
+/*
 h3{
     text-align:center;
     font-family: 'Orbitron', sans-serif;
 
 }
+*/
 
-.makeClass
+.makeLight
 {
-    opacity:1;
+    opacity:0.5;
 }
+
+
 
 
 
