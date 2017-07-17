@@ -25,21 +25,21 @@ body{
     margin-right:20px;
     margin-bottom:20px;
     border:10px solid #e3e418;
-    box-shadow: inset 0 0 50px #4A360B;
+    box-shadow: inset 0 0 80px #4A360B;
     z-index: 2;
     opacity:0.99;
 }
 
 #circle2 {
      border-radius: 0px 600px 0px 0px;
-    background:rgb(255, 0, 0);
+    background:#B20000;
     padding: 20px; 
     width: 280px;
     height: 280px; 
     display:inline-block;
     margin-bottom:20px;
-    border:10px solid #FF0000;
-    box-shadow: inset 0 0 50px #300000;
+    border:10px solid #B20000;
+    box-shadow: inset 0 0 80px #300000;
     opacity:0.99;
     z-index: 2;
 
@@ -60,6 +60,7 @@ body{
     margin-top:-400px;
     position:relative;
     top:-63px;
+    
 }
 
 #circle3 {
@@ -72,7 +73,7 @@ body{
     margin-right:20px;
     margin-top:-55px;
     border: 10px solid #5CA4F5;
-    box-shadow: inset 0 0 50px #122030;
+    box-shadow: inset 0 0 80px #122030;
     opacity:0.99;
     z-index: 1;
 }
@@ -93,6 +94,7 @@ body{
     position:relative;
     top:-43px;
     left:-303.5px;
+    opacity:0;
 }
 
 #circle4 {
@@ -103,7 +105,7 @@ body{
     height: 280px; 
     display:inline-block;
     border:10px solid rgba(115,173,33,1);
-    box-shadow: inset 0 0 50px #182407;
+    box-shadow: inset 0 0 80px #182407;
     opacity:0.99;
     z-index: 1;
     position:relative;
@@ -170,12 +172,14 @@ body{
     height:45px;
     border-radius:50%;
     display:inline-block;
-    margin:15px -3px 2px 20px;
+    margin:10px -3px 2px 20px;
 }
 
 #easy{
     background:#e3e418;
     box-shadow: inset 0 0 20px #4A360B;
+    color:#e3e418;
+    font-size:8px;
 }
 
 #startgame{
@@ -185,7 +189,7 @@ body{
     height:45px;
     border-radius:50%;
     display:inline-block;
-    margin:15px -3px 2px 20px;
+    margin:5px -3px 2px 20px;
     box-shadow: inset 0 0 20px #300000;
 }
 
@@ -199,7 +203,7 @@ body{
     border: 1px solid red;
     padding:8px;
     color:red;
-    margin-top:13px;
+    margin-top:10px;
     margin-left:65px;
     width:70px;
     height:15px;
@@ -216,9 +220,11 @@ h3{
 }
 */
 
+
 .makeLight
 {
-    opacity:0.5;
+    filter: brightness(200%);
+
 }
 
 

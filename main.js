@@ -16,14 +16,22 @@ $circle.click(function()
 {
     let userSelection = $(this).attr('id');
     userTurn.push(userSelection);
-    console.log(userSelection)
-    $(this).animate({opacity: 0.5},500).animate({opacity: 1}, 300);
+    //console.log(userSelection)
+    //$(this).animate({opacity: 0.5},500).animate({opacity: 1}, 300);
     checkForWin(); 
-
 });
 
-//declaring count variable
-var count = 0;
+    $circle.on('mousedown', function()
+    {
+        $(this).addClass('makeLight');
+    });
+
+    $circle.on('mouseup', function()
+        {
+            $(this).removeClass('makeLight');
+        });
+
+
 
 //start function
 function startGame()
@@ -40,19 +48,9 @@ function startGame()
 function randomizer()
 {
     console.log('randomizer')
-   gameTurn.push($buttons[getRandom()]);          //build array from pattern
+    gameTurn.push($buttons[getRandom()]);          //build array from pattern
    let randNum = gameTurn;
    console.log(randNum);
-/*
-   if(gameTurn.length > 1)
-    {
-        setTimeout(function()
-        {
-        let a = randNum.pop();
-            gameTurn.push(a);
-        }, 1000);
-    }
-*/
 
     setTimeout(function()
     {
@@ -65,7 +63,8 @@ function flasher()
 {
     for(i = 0; i < gameTurn.length; i++)
     {
-            //$(`#${gameTurn[i]}`).fadeTo(450, 0.5, function() {$(this).fadeTo(350, 1.0); });
+    
+    //$(`#${gameTurn[i]}`).fadeTo(450, 0.5, function() {$(this).fadeTo(350, 1.0); });
             $(`#${gameTurn[i]}`).delay(i * 400).animate({
                 opacity: '0.5',
             });
@@ -79,6 +78,7 @@ function flasher()
             });
             }
     }
+
 }
 
 
@@ -102,6 +102,8 @@ function checkForWin()
     setTimeout(function() 
     { 
         if(currentCheckIndex ===  gameTurn.length-1){
+            setTimeout(function()
+            {
             console.log('resetting check index');
             $('#counter').text(userTurn.length);
             
@@ -113,10 +115,19 @@ function checkForWin()
             currentCheckIndex = 0;
             userTurn = [];
 
+            if(gameTurn.length > 4)
+                {
+                    setTimeout(function()
+                    {
+                        randomizer();
+                    }, 500);
+                }
+
+            }, 500);
         }else{
             currentCheckIndex++;   
         }
-    }, 1500);
+    }, 500);
 
 }
 
