@@ -12,7 +12,7 @@ At first I designed my wireframes to look exactly how I wanted my game to look. 
 
 ## User Stories
 
-> Code samples, description of challenges you overcame, etc.
+You can click the same buttont that the computer generated and then if the click is correct, the game will generate a new addition to the pattern
 
 ## Wireframes
 
