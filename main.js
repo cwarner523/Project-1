@@ -50,7 +50,19 @@ function startGame()
 // picking a random number and adding a delay to call the flasher function
 function randomizer()
 {
-    gameTurn.push($buttons[getRandom()]);          //build array from pattern
+    setTimeout(function()
+    {
+        gameTurn.push($buttons[getRandom()]);          //build array from pattern
+    }, 500);
+
+    setTimeout(function()
+    {
+        if (gameTurn.length > 4)
+            {
+                gameTurn.push($buttons[getRandom()]);
+            }
+    })
+    
     console.log(gameTurn);
 
     setTimeout(function()
@@ -86,9 +98,7 @@ function checkForWin()
     location.reload();
     }   
     
-    console.log(currentCheckIndex);
-    console.log(gameTurn.length);
-    console.log(gameTurn.length-1);
+    
     setTimeout(function() 
     { 
         // if the current index is = to the last element in the gameturn array 
@@ -107,6 +117,7 @@ function checkForWin()
                 currentCheckIndex = 0;
                 userTurn = [];
 
+            // if length is greater than 4 delay calling the randomizer function
             if(gameTurn.length > 4)
                 {
                     setTimeout(function()
@@ -114,10 +125,13 @@ function checkForWin()
                         randomizer();
                     }, 500);
                 }
-                
+
             }, 500);
         }else{
-            currentCheckIndex++;   
+            setTimeout(function()
+            {
+                currentCheckIndex++;   
+            }, 300);
         }
     }, 500);
     winner();

@@ -17,37 +17,37 @@ body{
 
 #circle1 {
     border-radius: 600px 0px 0px 0px;
-    background:rgb(227,228,24);
+    background:#E3E436;
     padding: 20px; 
     width: 280px;
     height: 280px; 
     display:inline-block;
     margin-right:20px;
     margin-bottom:20px;
-    border:10px solid #e3e418;
+    border:10px solid #E3E436;
     box-shadow: inset 0 0 80px #4A360B;
     z-index: 2;
-    opacity:0.65;
+    opacity:0.55;
 }
 
 #circle2 {
      border-radius: 0px 600px 0px 0px;
-    background:#B20000;
+    background:#D40000;
     padding: 20px; 
     width: 280px;
     height: 280px; 
     display:inline-block;
     margin-bottom:20px;
-    border:10px solid #B20000;
+    border:10px solid #D40000;
     box-shadow: inset 0 0 80px #300000;
-    opacity:0.65;
+    opacity:0.55;
     z-index: 2;
 
 }
 
 #circle3 {
     border-radius: 0px 0px 0px 600px;
-    background:rgb(92,164,245);
+    background:#5CA4F5;
     padding: 20px; 
     width: 280px;
     height: 280px;
@@ -56,7 +56,7 @@ body{
     margin-top:-55px;
     border: 10px solid #5CA4F5;
     box-shadow: inset 0 0 80px #122030;
-    opacity:0.65;
+    opacity:0.55;
     z-index: 1;
 }
 
@@ -70,7 +70,7 @@ body{
     display:inline-block;
     border:10px solid rgba(115,173,33,1);
     box-shadow: inset 0 0 80px #182407;
-    opacity:0.65;
+    opacity:0.55;
     z-index: 1;
     position:relative;
 }
@@ -101,7 +101,7 @@ body{
 }
 
 #title h2{
-    font-family:helvetica;
+    font-family: 'Coda', cursive;
     font-size:42px;
     margin-top:10px;
     color:white;
