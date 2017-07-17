@@ -6,8 +6,12 @@ const $buttons = ["circle1", "circle2", "circle3", "circle4"];
 var gameTurn = [];
 var userTurn = [];
 var $startButton = $('#startgame');
+
+//declaring circle class
 var $circle = $('.circle')
 let currentCheckIndex = 0;
+
+//start counter on 0
 $('#counter').text(0);
 
 
@@ -16,21 +20,20 @@ $circle.click(function()
 {
     let userSelection = $(this).attr('id');
     userTurn.push(userSelection);
-    //console.log(userSelection)
-    //$(this).animate({opacity: 0.5},500).animate({opacity: 1}, 300);
     checkForWin(); 
 });
 
-    $circle.on('mousedown', function()
-    {
-        $(this).addClass('makeLight');
+// when buttons are clicked on calls the makeLight class to light up
+$circle.on('mousedown', function()
+{
+    $(this).addClass('makeLight');
+});
+
+// when mouse is up removes the class to go back to normal
+$circle.on('mouseup', function()
+     {
+        $(this).removeClass('makeLight');
     });
-
-    $circle.on('mouseup', function()
-        {
-            $(this).removeClass('makeLight');
-        });
-
 
 
 //start function
@@ -44,76 +47,65 @@ function startGame()
     })
 }
 
-
+// picking a random number and adding a delay to call the flasher function
 function randomizer()
 {
-    console.log('randomizer')
     gameTurn.push($buttons[getRandom()]);          //build array from pattern
-   let randNum = gameTurn;
-   console.log(randNum);
+    console.log(gameTurn);
 
     setTimeout(function()
     {
-        flasher(1);
+        flasher();
     }, 500);
 
 }
 
+// call flasher to iterate through array and create a flash illusion
 function flasher()
 {
     for(i = 0; i < gameTurn.length; i++)
     {
-    
-    //$(`#${gameTurn[i]}`).fadeTo(450, 0.5, function() {$(this).fadeTo(350, 1.0); });
-            $(`#${gameTurn[i]}`).delay(i * 400).animate({
-                opacity: '0.5',
-            });
-            $(`#${gameTurn[i]}`).delay(i * 200).animate({
-                opacity: '1',
-            });
-            if(gameTurn[i] === 'circle1'){
-            $($('#circle1a')).animate({
-                opacity: '0',
-                
-            });
-            }
+        $(`#${gameTurn[i]}`).delay(i * 500).animate({
+            opacity: '1',
+        });
+         $(`#${gameTurn[i]}`).delay(i * 300).animate({
+            opacity: '0.7',
+        });
     }
-
 }
 
-
+// function to check for win
 function checkForWin()
 { 
-
-    console.log(`Game turn: ${gameTurn}, user turn: ${userTurn}`);
+    // checking to see if the game turn and user turn have the same index
     if (gameTurn[currentCheckIndex] === userTurn[currentCheckIndex])
     {
         console.log("count 1");
-        
     }else{
     alert("You have lost, try again!");
     location.reload();
     }   
     
-
     console.log(currentCheckIndex);
     console.log(gameTurn.length);
     console.log(gameTurn.length-1);
     setTimeout(function() 
     { 
+        // if the current index is = to the last element in the gameturn array 
         if(currentCheckIndex ===  gameTurn.length-1){
             setTimeout(function()
             {
-            console.log('resetting check index');
-            $('#counter').text(userTurn.length);
+                //add one to the counter to keep track of pattern
+                $('#counter').text(userTurn.length);
             
-            setTimeout(function()
-            {
-                randomizer();
-            }, 500);
+                setTimeout(function()
+                {
+                    randomizer();
+                }, 600);
 
-            currentCheckIndex = 0;
-            userTurn = [];
+                // reset index and userTurn array
+                currentCheckIndex = 0;
+                userTurn = [];
 
             if(gameTurn.length > 4)
                 {
@@ -122,13 +114,13 @@ function checkForWin()
                         randomizer();
                     }, 500);
                 }
-
+                
             }, 500);
         }else{
             currentCheckIndex++;   
         }
     }, 500);
-
+    winner();
 }
 
 // create pattern
@@ -138,3 +130,26 @@ function getRandom()
 }
 
 startGame();
+
+// calling the winner function
+function winner()
+{
+    if (userTurn.length === 6)
+        {
+            setTimeout(function()
+            {
+                $('.circle').addClass('makeLight');
+
+                setTimeout(function()
+                {
+                    $('#counter').text("WINNER");
+                }, 500);
+
+                setTimeout(function()
+                {
+                    alert("you have won!")
+                    location.reload();
+                }, 1000);
+            }, 2000);
+        }
+}
