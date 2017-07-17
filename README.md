@@ -20,7 +20,7 @@ HTML, CSS, Javascript
 
 ## Wireframes
 
-> Any credits or notes you feel you should add
+<img src= "./images/Screen Shot 2017-07-11 at 3.12.49 PM.png">
 
 ## How-to-use Instructions
 
