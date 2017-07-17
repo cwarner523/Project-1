@@ -14,7 +14,7 @@ be fun to design it and there's a lot I can do!
 
 HTML, CSS, Javascript
 
-### User Stories
+## User Stories
 
 > Code samples, description of challenges you overcame, etc.
 
