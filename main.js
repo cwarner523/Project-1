@@ -1,6 +1,10 @@
 
 //array of divs
 const $buttons = ["circle1", "circle2", "circle3", "circle4"];
+var circleYellow = new Audio(audio/simonSound1.mp3);
+var circleRed = new Audio(audio/simonSound2.mp3);
+var circleBlue = new Audio(audio/simonSound3.mp3);
+var circleGreen = new Audio(audio/simonSound4.mp3);
 
 // decarling empty arrays to store user and game patterns
 var gameTurn = [];
@@ -27,6 +31,10 @@ $circle.click(function()
 $circle.on('mousedown', function()
 {
     $(this).addClass('makeLight');
+    circleYellow.play();
+    circleRed.play();
+    circleBlue.play();
+    circleGreen.play();
 });
 
 // when mouse is up removes the class to go back to normal
