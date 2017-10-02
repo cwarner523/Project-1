@@ -50,15 +50,7 @@ function randomizer()
     console.log(gameTurn.length);
     console.log(gameTurn);
 
-  //  if (gameTurn.length > 4) {
-  //    gameTurn.push($buttons[getRandom()]);
-  //  }
-
     flasher();
-    //setTimeout(function() {
-    //    flasher();
-    //}, 500);
-    //setTimeout(flasher, 500);
 
 }
 
@@ -87,52 +79,6 @@ function flasher() {
     timer += 500;
     i++;
   }
-  /*
-    for(i = 0; i < gameTurn.length; i++)
-    {
-      var turn = gameTurn[i];
-      console.log(turn);
-      setTimeout(function() {
-        $(`#${turn}`).addClass('makeLight')
-        //console.log(turn);
-      }, timer)
-
-      timer += 500;
-
-      setTimeout(function() {
-        $(`#${turn}`).removeClass('makeLight')
-      }, timer)
-*/
-    //timer += 500;
-      //console.log(gameTurn);
-    //  $(`#${gameTurn[i]}`).addClass('makeLight').delay(500).queue(function(next) {
-    //    $(this).removeClass('makeLight');
-    //    next();
-    //  })
-    //  $(`#${gameTurn[i]}`).removeClass('makeLight')
-    //setTimeout(function() {
-        //$(`#${gameTurn[i]}`).removeClass('makeLight')
-      //}, 100);
-
-/*
-      for(i = 0; i < gameTurn.length; i++)
-      {
-        var turn = gameTurn[i];
-        console.log(turn);
-        setTimeout(function() {
-          $(`#${turn}`).addClass('makeLight')
-          //console.log(turn);
-        }, timer)
-
-        timer += 500;
-
-        setTimeout(function() {
-          $(`#${turn}`).removeClass('makeLight')
-        }, timer)
-
-      timer += 500;
-  */
-
 }
 
 
