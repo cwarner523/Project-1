@@ -16,31 +16,27 @@ $('#counter').text(0);
 
 
 // initialize button click events
-$circle.click(function()
-{
+$circle.click(function() {
     let userSelection = $(this).attr('id');
     userTurn.push(userSelection);
-    checkForWin(); 
+    checkForWin();
 });
 
 // when buttons are clicked on calls the makeLight class to light up
-$circle.on('mousedown', function()
-{
+$circle.on('mousedown', function() {
     $(this).addClass('makeLight');
 });
 
 // when mouse is up removes the class to go back to normal
-$circle.on('mouseup', function()
-     {
-        $(this).removeClass('makeLight');
-    });
+$circle.on('mouseup', function() {
+    $(this).removeClass('makeLight');
+});
 
 
 //start function
 function startGame()
 {
-    $startButton.click(function()
-    {
+    $startButton.click(function() {
         console.log("your game is starting");
         $('#counter').text(0);
         randomizer();
@@ -50,45 +46,98 @@ function startGame()
 // picking a random number and adding a delay to call the flasher function
 function randomizer()
 {
-    setTimeout(function()
-    {
-        gameTurn.push($buttons[getRandom()]);          //build array from pattern
-    }, 500);
-
-    setTimeout(function()
-    {
-        if (gameTurn.length > 4)
-            {
-                gameTurn.push($buttons[getRandom()]);
-            }
-    })
-    
+    gameTurn.push($buttons[getRandom()]);          //build array from pattern
+    console.log(gameTurn.length);
     console.log(gameTurn);
 
-    setTimeout(function()
-    {
-        flasher();
-    }, 500);
+  //  if (gameTurn.length > 4) {
+  //    gameTurn.push($buttons[getRandom()]);
+  //  }
+
+    flasher();
+    //setTimeout(function() {
+    //    flasher();
+    //}, 500);
+    //setTimeout(flasher, 500);
 
 }
 
 // call flasher to iterate through array and create a flash illusion
-function flasher()
-{
+function flasher() {
+  var timer = 500;
+  console.log('flashing');
+  console.log(gameTurn.length);
+  console.log(gameTurn);
+  let i = 0;
+  while (i < gameTurn.length) {
+    var turn = gameTurn[i];
+    console.log(turn);
+    setTimeout(function(x) {
+      $(`#${x}`).addClass('makeLight')
+      console.log(turn);
+
+    }, timer, turn)
+
+    timer += 500;
+
+    setTimeout(function(x) {
+      $(`#${x}`).removeClass('makeLight')
+    }, timer, turn);
+
+    timer += 500;
+    i++;
+  }
+  /*
     for(i = 0; i < gameTurn.length; i++)
     {
-        $(`#${gameTurn[i]}`).delay(i * 500).animate({
-            opacity: '1',
-        });
-         $(`#${gameTurn[i]}`).delay(i * 300).animate({
-            opacity: '0.7',
-        });
-    }
+      var turn = gameTurn[i];
+      console.log(turn);
+      setTimeout(function() {
+        $(`#${turn}`).addClass('makeLight')
+        //console.log(turn);
+      }, timer)
+
+      timer += 500;
+
+      setTimeout(function() {
+        $(`#${turn}`).removeClass('makeLight')
+      }, timer)
+*/
+    //timer += 500;
+      //console.log(gameTurn);
+    //  $(`#${gameTurn[i]}`).addClass('makeLight').delay(500).queue(function(next) {
+    //    $(this).removeClass('makeLight');
+    //    next();
+    //  })
+    //  $(`#${gameTurn[i]}`).removeClass('makeLight')
+    //setTimeout(function() {
+        //$(`#${gameTurn[i]}`).removeClass('makeLight')
+      //}, 100);
+
+/*
+      for(i = 0; i < gameTurn.length; i++)
+      {
+        var turn = gameTurn[i];
+        console.log(turn);
+        setTimeout(function() {
+          $(`#${turn}`).addClass('makeLight')
+          //console.log(turn);
+        }, timer)
+
+        timer += 500;
+
+        setTimeout(function() {
+          $(`#${turn}`).removeClass('makeLight')
+        }, timer)
+
+      timer += 500;
+  */
+
 }
 
+
 // function to check for win
-function checkForWin()
-{ 
+function checkForWin() {
     // checking to see if the game turn and user turn have the same index
     if (gameTurn[currentCheckIndex] === userTurn[currentCheckIndex])
     {
@@ -96,18 +145,17 @@ function checkForWin()
     }else{
     alert("You have lost, try again!");
     location.reload();
-    }   
-    
-    
-    setTimeout(function() 
-    { 
-        // if the current index is = to the last element in the gameturn array 
+    }
+
+
+    setTimeout(function() {
+        // if the current index is = to the last element in the gameturn array
         if(currentCheckIndex ===  gameTurn.length-1){
             setTimeout(function()
             {
                 //add one to the counter to keep track of pattern
                 $('#counter').text(userTurn.length);
-            
+
                 setTimeout(function()
                 {
                     randomizer();
@@ -130,7 +178,7 @@ function checkForWin()
         }else{
             setTimeout(function()
             {
-                currentCheckIndex++;   
+                currentCheckIndex++;
             }, 300);
         }
     }, 500);
@@ -138,16 +186,14 @@ function checkForWin()
 }
 
 // create pattern
-function getRandom()
-{
+function getRandom() {
     return Math.floor(Math.random() * 4);
 }
 
 startGame();
 
 // calling the winner function
-function winner()
-{
+function winner() {
     if (userTurn.length === 6)
         {
             setTimeout(function()
